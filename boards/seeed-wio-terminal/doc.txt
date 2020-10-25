@@ -1,0 +1,64 @@
+/**
+@defgroup    boards_seeed-wio-terminal Seeed WIO Terminal
+@ingroup     boards
+@brief       Support for the Seeed WIO Terminal board.
+
+## Overview
+
+Compatible with Arduino and MicroPython, Wio Terminal is an ATSAMD51-based
+microcontroller with wireless connectivity supported by Realtek RTL8720DN.
+Its CPU speed runs at 120MHz (Boost up to 200MHz). Realtek RTL8720DN chip
+supports both Bluetooth and Wi-Fi providing the backbone for IoT projects.
+The Wio Terminal itself is equipped with a 2.4” LCD Screen, onboard 
+IMU(LIS3DHTR), Microphone, Buzzer, microSD card slot, Light sensor,
+and Infrared Emitter(IR 940nm).
+
+The [UF2 Bootloader](https://github.com/microsoft/uf2-samdx1) is
+used to program this board. The ATSAMD51P19A is a ARM Cortex-M4 micro-controller.
+It has 4MiB of flash memory and 192KiB of RAM.
+
+## Hardware
+
+![wio-terminal](https://wiki.seeedstudio.com/Wio-Terminal-Getting-Started/)
+
+
+### MCU
+| MCU           | ATSAMD51P19A                          |
+|:------------- |:------------------------------------- |
+| Family        | ARM Cortex-M4+                        |
+| Vendor        | Atmel                                 |
+| RAM           | 192KiB                                |
+| Flash         | 4MiB                                  |
+| Frequency     | up to 200MHz                          |
+| FPU           | yes                                   |
+| Timers        | 5 (3x 16-bit, 2x 24-bit)              |
+| ADCs          | 6x 12-bit channels)                   |
+| UARTs         | 2                                     |
+| SPIs          | max 8 (see UART)                      |
+| I2Cs          | max 8 (see UART)                      |
+| Vcc           | 1.8V - 3.6V                           |
+| Datasheet     | [Datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D5xE5x_Family_Data_Sheet_DS60001507F.pdf) |
+
+### User Interface
+
+1 LED:
+
+| Device | PIN  |
+|:------ |:---- |
+| LED0   | PA15 |
+
+
+## Flashing the device
+
+Assuming the [UF2 Bootloader](https://github.com/microsoft/uf2-samdx1) is
+installed, just run:
+
+```
+make BOARD=seeed-wio-terminal flash
+```
+
+Hint: You can you press the reset button twice to manually enter the bootloader.
+This is helpful if the board has crashed (e.g. due to a failed assert() during
+start up).
+
+ */

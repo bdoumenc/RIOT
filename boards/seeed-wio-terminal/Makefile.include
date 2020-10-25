@@ -1,0 +1,14 @@
+CFLAGS += -DBOOTLOADER_UF2
+
+PROG_DEV ?= /dev/ttyACM0
+PROGRAMMER ?= bossa
+
+ifeq ($(PROGRAMMER),bossa)
+  # by default, we use BOSSA to flash this board and take into account the
+  # preinstalled Arduino bootloader. ROM_OFFSET skips the space taken by
+  # such bootloader.
+  ROM_OFFSET ?= 0x4000
+
+  include $(RIOTMAKE)/tools/bossa.inc.mk
+endif
+include $(RIOTMAKE)/boards/sam0.inc.mk
