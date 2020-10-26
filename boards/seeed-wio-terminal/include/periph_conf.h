@@ -111,7 +111,7 @@ static const uart_conf_t uart_config[] = {
  */
 static const spi_conf_t spi_config[] = {
     {
-        .dev      = &(SERCOM0->SPI),
+        .dev      = &(SERCOM5->SPI),
         .miso_pin = GPIO_PIN(PB, 0),
         .mosi_pin = GPIO_PIN(PB, 2),
         .clk_pin  = GPIO_PIN(PB, 3),
@@ -120,7 +120,31 @@ static const spi_conf_t spi_config[] = {
         .clk_mux  = GPIO_MUX_D,
         .miso_pad = SPI_PAD_MISO_2,
         .mosi_pad = SPI_PAD_MOSI_0_SCK_1,
-        .gclk_src = SAM0_GCLK_MAIN,
+        .gclk_src = SAM0_GCLK_PERIPH,
+    },
+    {
+        .dev      = &(SERCOM6->SPI),
+        .miso_pin = GPIO_PIN(PC, 18),
+        .mosi_pin = GPIO_PIN(PC, 16),
+        .clk_pin  = GPIO_PIN(PC, 17),
+        .miso_mux = GPIO_MUX_D,
+        .mosi_mux = GPIO_MUX_D,
+        .clk_mux  = GPIO_MUX_D,
+        .miso_pad = SPI_PAD_MISO_2,
+        .mosi_pad = SPI_PAD_MOSI_0_SCK_1,
+        .gclk_src = SAM0_GCLK_PERIPH,
+    },
+    {
+        .dev      = &(SERCOM7->SPI),
+        .miso_pin = GPIO_PIN(PB, 18),
+        .mosi_pin = GPIO_PIN(PB, 19),
+        .clk_pin  = GPIO_PIN(PB, 20),
+        .miso_mux = GPIO_MUX_D,
+        .mosi_mux = GPIO_MUX_D,
+        .clk_mux  = GPIO_MUX_D,
+        .miso_pad = SPI_PAD_MISO_2,
+        .mosi_pad = SPI_PAD_MOSI_3_SCK_1,
+        .gclk_src = SAM0_GCLK_PERIPH,
     }
 };
 

@@ -22,6 +22,8 @@
 
 void board_init(void)
 {
+
     /* initialize the CPU */
     cpu_init();
+    gpio_init(LCD_BACKLIGHT_PIN, GPIO_OUT);
 }
